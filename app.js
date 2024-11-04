@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.backgroundColor = backgroundPath.getAttribute('fill') || '#000000';
 
     const ANIMATION_DELAY = 90;
-    // Animate other paths with a staggered fade-in effect
     paths.forEach((path, index) => {
         if (index > 0) { // Skip the background path (already animated above)
             path.style.opacity = '0';
@@ -26,4 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }, index * ANIMATION_DELAY);
         }
     });
+
+    // Center and scale SVG on resize
+    const centerAndScaleSVG = () => {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        
+        // Set SVG width to 90% of the viewport’s smaller dimension, maintaining original size ratio
+        const svgSize = Math.min(vw, vh) * .9;
+        svg.style.width = `${svgSize}px`;
+        svg.style.height = 'auto';
+
+        // Center SVG
+        svg.style.position = 'absolute';
+        svg.style.left = '66%';
+        svg.style.top = '80%';
+        svg.style.transform = 'translate(-50%, -50%)';
+    };
+
+    // Initial setup and add resize listener
+    centerAndScaleSVG();
+    window.addEventListener('resize', centerAndScaleSVG);
 });
