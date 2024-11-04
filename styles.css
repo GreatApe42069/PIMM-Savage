@@ -7,15 +7,15 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #000000;
+    background-color: transparent;
     font-family: 'Arial', sans-serif;
 }
 
 svg {
-    width: 200vw; /* Adjust this to control size */
+    width: 100vw; /* Adjust this to control size */
     height: auto; /* Maintain aspect ratio */
-    max-height: 200vh; /* Prevent overflow */
+    max-height: 100vh; /* Prevent overflow vertically */
     opacity: 0;
-    transition: opacity 4s ease-in-out; /* Move transition to CSS */
- transform: translate(32vw, 20vh); /* Adjust for right and down positioning */
+    transition: opacity 4s ease-in-out, width 0.3s ease, height 0.3s ease;
+transform: translate(32vw, 20vh); /* Adjust for right and down positioning */
 }
