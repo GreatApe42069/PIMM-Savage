@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
+}
+
+svg {
+    width: 200vw; /* Adjust this to control size */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200vh; /* Prevent overflow */
+    opacity: 0;
+    transition: opacity 4s ease-in-out; /* Move transition to CSS */
+ transform: translate(32vw, 20vh); /* Adjust for right and down positioning */
+}
